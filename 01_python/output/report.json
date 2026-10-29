@@ -1,0 +1,46 @@
+{
+  "valid_rows": 10,
+  "skipped": 2,
+  "errors": [
+    "Line 10: invalid literal for int() with base 10: 'five'",
+    "Line 11: missing category"
+  ],
+  "grand_total": 4136.5,
+  "by_category": {
+    "Electronics": 3065.0,
+    "Furniture": 815.0,
+    "Stationery": 256.5
+  },
+  "by_month": {
+    "2026-01": 2015.0,
+    "2026-02": 1047.5,
+    "2026-03": 414.0,
+    "2026-04": 660.0
+  },
+  "top_3": [
+    {
+      "date": "2026-01-05",
+      "product": "Laptop",
+      "category": "Electronics",
+      "quantity": 2,
+      "unit_price": 750.0,
+      "total": "\u00a31,500.00"
+    },
+    {
+      "date": "2026-02-14",
+      "product": "Monitor",
+      "category": "Electronics",
+      "quantity": 4,
+      "unit_price": 210.0,
+      "total": "\u00a3840.00"
+    },
+    {
+      "date": "2026-01-12",
+      "product": "Desk Chair",
+      "category": "Furniture",
+      "quantity": 3,
+      "unit_price": 120.0,
+      "total": "\u00a3360.00"
+    }
+  ]
+}
