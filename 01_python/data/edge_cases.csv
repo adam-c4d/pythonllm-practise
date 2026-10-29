@@ -1,0 +1,14 @@
+date,product,category,quantity,unit_price
+2026-01-05,Laptop,Electronics,2,750.00
+2026-01-07,Mouse,Electronics,10,15.50
+2026-01-12,Desk Chair,Furniture,3,120.00
+2026-02-02,50,2.25
+2026-02-14,Monitor,Electronics,4,210.00
+2026-02-20,Bookshelf,Furniture,1,95.00
+2026-03-03,Pen Pack,Stationery ,30,4.80
+2026-03-09,Keyboard,Electronics,6,45.00
+2026-03-15,Desk Lamp,Furniture,five,30.00
+2026-03-21,Stapler,,8,7.50
+2026-04-01,Webcam,Electronics,5,60.00
+2026-04-11,Filing Cabinet,Furniture,2,180.00
+2026-05-03,Spaces,   ,1,10

@@ -20,13 +20,14 @@ class Sale:
 
     @classmethod
     def from_row(cls, row: dict[str, str]) -> "Sale":
-        if not row["category"]:
+        category = row["category"].strip()  # Strip whitespace from category
+        if not category:
             raise ValueError("missing category")
 
         return cls(
             date=row["date"],
             product=row["product"],
-            category=row["category"],
+            category=category,
             quantity=int(row["quantity"]),
             unit_price=float(row["unit_price"]),
         )

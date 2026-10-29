@@ -26,17 +26,16 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 |---|---|---|
 | **Task 1**: Environment setup | ✅ Done (2026-10-27) | Conda env `dsllm` (Python 3.13), VS Code extensions, Git, folders, first commit |
 | **Task 2**: Python for data work ([spec](01_python/TASK_2.md)) | 🟡 In progress | |
-| ├ Ex 1: `models.py` | ✅ Written, output correct | Not reviewed yet |
-| ├ Ex 2: `loader.py` | ✅ Written, output correct | 10 sales / 2 errors. Not reviewed yet |
-| ├ Ex 3: `analysis.py` | ✅ Written, output correct | All totals match. Not reviewed yet |
+| ├ Ex 1: `models.py` | 🔧 Reviewed 2026-10-28 | ✅ Whitespace category fixed (`.strip()`). Next: required-fields check in `from_row` (fixes Ex 2 crash) |
+| ├ Ex 2: `loader.py` | 🔧 Reviewed 2026-10-28 | Fix: short CSV row crashes with `TypeError` |
+| ├ Ex 3: `analysis.py` | ✅ Reviewed 2026-10-28 | Correct. Optional: merge the two `total_by_*` functions |
 | └ Ex 4: `sales_report.py` | ⬜ To do | File created but empty |
 | Task 3: Phase 2, pandas & EDA | ⬜ Not started | |
 
 ## Next session: start here
-1. Commit Exercises 1–3 (they aren't committed yet):
-   `git add . ; git commit -m "Ex1-3: Sale model, loader, analysis"`
-2. Ask Claude: **"review ex1-3"** to get feedback on what you've written.
-3. Write Exercise 4 (`sales_report.py`). The expected output is in [01_python/TASK_2.md](01_python/TASK_2.md).
+1. Fix the 2 bugs from the Ex 1–3 review (details in the Notes column above).
+2. Write Exercise 4 (`sales_report.py`). The expected output is in [01_python/TASK_2.md](01_python/TASK_2.md).
+3. Ask Claude to **"review ex4"**.
 4. Then ask for **Task 3** (pandas). You'll redo this whole report in about 10 lines.
 
 ## Habits
