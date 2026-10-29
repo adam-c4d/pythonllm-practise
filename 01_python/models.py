@@ -1,6 +1,7 @@
 
 from dataclasses import dataclass
 
+FIELDS = ("date", "product", "category", "quantity", "unit_price")
 
 @dataclass
 class Sale:
@@ -20,9 +21,11 @@ class Sale:
 
     @classmethod
     def from_row(cls, row: dict[str, str]) -> "Sale":
+        for field in FIELDS:
+            value = row.get(field)
+            if value is None or not value.strip():
+                raise ValueError(f"missing {field}")
         category = row["category"].strip()  # Strip whitespace from category
-        if not category:
-            raise ValueError("missing category")
 
         return cls(
             date=row["date"],
