@@ -25,18 +25,23 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | Task | Status | Notes |
 |---|---|---|
 | **Task 1**: Environment setup | ✅ Done (2026-10-27) | Conda env `dsllm` (Python 3.13), VS Code extensions, Git, folders, first commit |
-| **Task 2**: Python for data work ([spec](01_python/TASK_2.md)) | ✅ Done (2026-10-29) | |
+| **Task 2**: Python for data work ([spec](01_python/TASK_2.md)) | ✅ Done (2026-10-29) | Optional improvements done 2026-10-30 (`frozen`, `Self`, `try/else`, `total_by`) |
 | ├ Ex 1: `models.py` | ✅ Fixed 2026-10-29 | Category stripped; `from_row` checks all `FIELDS` (`None`/blank → `ValueError`). Optional: `frozen=True`, `Self` |
 | ├ Ex 2: `loader.py` | ✅ Fixed 2026-10-29 | Short rows reported, no crash. Tested with `data/edge_cases.csv` (9 valid, 5 errors). Optional: `try/except/else` |
 | ├ Ex 3: `analysis.py` | ✅ Reviewed 2026-10-28 | Correct. Optional: merge the two `total_by_*` functions |
 | └ Ex 4: `sales_report.py` | ✅ Done 2026-10-29 | Output matches spec exactly. Learned: format specs (`:,.2f`, `<14`, `>9`), `main()` pattern, `asdict` + `**` unpacking. JSON should store raw numbers, not `"£..."` strings |
-| Task 3: Phase 2, pandas & EDA | ⬜ Not started | |
+| **Task 3**: pandas basics ([spec](02_data/TASK_3.md)) | 🟡 In progress | Same sales data as Task 2, in a notebook |
+| ├ Ex 1: load and inspect | ⬜ To do | |
+| ├ Ex 2: clean | ⬜ To do | |
+| ├ Ex 3: report, pandas style | ⬜ To do | |
+| ├ Ex 4: charts | ⬜ To do | |
+| └ Ex 5: `report_pandas.py` | ⬜ To do | |
+| Task 4: explore a real dataset (EDA) + NumPy basics | ⬜ Not started | |
 
 ## Next session: start here
-1. ~~Fix the 2 bugs from the Ex 1–3 review~~ ✅ Done 2026-10-29.
-2. ~~Write Exercise 4~~ ✅ Done 2026-10-29.
-3. *(Optional)* Pythonic improvements: `frozen=True` and `Self` in `models.py`, `try/except/else` in `loader.py`, one `total_by(sales, key)` in `analysis.py`.
-4. Ask for **Task 3** (pandas). You'll redo this whole report in about 10 lines.
+1. Open [02_data/TASK_3.md](02_data/TASK_3.md) and do the **Setup** section (create the notebook and select the `dsllm` kernel).
+2. Work through Exercises 1–5. Commit after each one.
+3. Ask Claude to **"review ex1"** (or "review all").
 
 ## Habits
 - Type the code yourself; don't copy-paste.
