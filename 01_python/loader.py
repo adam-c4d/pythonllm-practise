@@ -13,11 +13,11 @@ def load_sales(path: Path) -> tuple[list[Sale], list[str]]:
 
         for line_number, row in enumerate(reader, start=2):
             try:
-                sale = Sale.from_row(row)
-                sales.append(sale)
+                sale = Sale.from_row(row)                
             except ValueError as e:
                 errors.append(f"Line {line_number}: {e}")
-
+            else:
+                sales.append(sale)
     return sales, errors
 
 

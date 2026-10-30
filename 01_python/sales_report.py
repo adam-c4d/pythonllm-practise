@@ -48,9 +48,9 @@ def main() -> None:
         "skipped": len(errors),
         "errors": errors,
         "grand_total": total_sales,
-        "by_category": {category: total for category, total in by_category.items()},
-        "by_month": {month: total for month, total in by_month.items()},
-        "top_3": [{**asdict(sale), "total": money(sale.total)} for i, sale in enumerate(top_3, start=1)],        # leave it like this for now — on purpose
+        "by_category": by_category,
+        "by_month": by_month,
+        "top_3": [{**asdict(sale), "total": sale.total} for sale in top_3],
     }
 
     with open(output_dir / "report.json", "w", encoding="utf-8") as f:

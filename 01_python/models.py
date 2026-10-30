@@ -1,9 +1,10 @@
 
 from dataclasses import dataclass
+from typing import Self
 
 FIELDS = ("date", "product", "category", "quantity", "unit_price")
 
-@dataclass
+@dataclass(frozen=True)
 class Sale:
     date: str
     product: str
@@ -20,7 +21,7 @@ class Sale:
         return self.date[:7]
 
     @classmethod
-    def from_row(cls, row: dict[str, str]) -> "Sale":
+    def from_row(cls, row: dict[str, str]) -> Self:
         for field in FIELDS:
             value = row.get(field)
             if value is None or not value.strip():
