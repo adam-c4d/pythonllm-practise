@@ -31,17 +31,17 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 3: `analysis.py` | ✅ Reviewed 2026-10-28 | Correct. Optional: merge the two `total_by_*` functions |
 | └ Ex 4: `sales_report.py` | ✅ Done 2026-10-29 | Output matches spec exactly. Learned: format specs (`:,.2f`, `<14`, `>9`), `main()` pattern, `asdict` + `**` unpacking. JSON should store raw numbers, not `"£..."` strings |
 | **Task 3**: pandas basics ([spec](02_data/TASK_3.md)) | 🟡 In progress | Same sales data as Task 2, in a notebook |
-| ├ Ex 1: load and inspect | ⬜ To do | |
-| ├ Ex 2: clean | ⬜ To do | |
+| ├ Ex 1: load and inspect | ✅ Done 2026-10-30 | `read_csv`, DataFrame vs Series, index, `shape`, `info`, dtypes, `NaN`, `isna().sum()` |
+| ├ Ex 2: clean | ✅ Done 2026-11-02 | `to_numeric(errors="coerce")`, `.str.strip()`, boolean masks (`\|` `&` `~`), `dropna(subset=)`, `astype`, `to_datetime`. Tidy-up: delete the erroring demo cell + duplicate cells so Run All works |
 | ├ Ex 3: report, pandas style | ⬜ To do | |
 | ├ Ex 4: charts | ⬜ To do | |
 | └ Ex 5: `report_pandas.py` | ⬜ To do | |
 | Task 4: explore a real dataset (EDA) + NumPy basics | ⬜ Not started | |
 
 ## Next session: start here
-1. Open [02_data/TASK_3.md](02_data/TASK_3.md) and do the **Setup** section (create the notebook and select the `dsllm` kernel).
-2. Work through Exercises 1–5. Commit after each one.
-3. Ask Claude to **"review ex1"** (or "review all").
+1. Tidy the notebook (see the Ex 2 note), then **Restart → Run All** to check it runs top to bottom.
+2. Ask Claude for **"Ex 3"** (the report, pandas style). Learning style: worked examples with explanations.
+3. Then Ex 4 (charts) and Ex 5 (`report_pandas.py`). Commit after each one.
 
 ## Habits
 - Type the code yourself; don't copy-paste.
