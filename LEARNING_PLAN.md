@@ -30,21 +30,58 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 2: `loader.py` | ✅ Fixed 2026-10-29 | Short rows reported, no crash. Tested with `data/edge_cases.csv` (9 valid, 5 errors). Optional: `try/except/else` |
 | ├ Ex 3: `analysis.py` | ✅ Reviewed 2026-10-28 | Correct. Optional: merge the two `total_by_*` functions |
 | └ Ex 4: `sales_report.py` | ✅ Done 2026-10-29 | Output matches spec exactly. Learned: format specs (`:,.2f`, `<14`, `>9`), `main()` pattern, `asdict` + `**` unpacking. JSON should store raw numbers, not `"£..."` strings |
-| **Task 3**: pandas basics ([spec](02_data/TASK_3.md)) | 🟡 In progress | Same sales data as Task 2, in a notebook |
+| **Task 3**: pandas basics ([spec](02_data/TASK_3.md)) | ✅ Done (2026-11-02) | Same sales data as Task 2, in a notebook |
 | ├ Ex 1: load and inspect | ✅ Done 2026-10-30 | `read_csv`, DataFrame vs Series, index, `shape`, `info`, dtypes, `NaN`, `isna().sum()` |
 | ├ Ex 2: clean | ✅ Done 2026-11-02 | `to_numeric(errors="coerce")`, `.str.strip()`, boolean masks (`\|` `&` `~`), `dropna(subset=)`, `astype`, `to_datetime`. Notebook tidied, Run All works, committed (`d5c448f`) |
 | ├ Ex 3: report, pandas style | ✅ Done 2026-11-02 | Column maths (vectorised), `.dt.strftime`, `groupby().sum()` (sorts groups), `nlargest`, `[[...]]` vs `[...]`, `.agg`. Fixed a `KeyError` (`price` → `unit_price`); learned to read tracebacks bottom-up. Committed `7eb09fd` |
-| ├ Ex 4: charts | ✅ Done 2026-11-02 | Bar + line + seaborn charts correct; both PNGs saved; Run All works. Committed `a646ff1`. Small tidy: heading says "Exercise: Charts" (add 4); fill in the "I prefer ___" answer |
-| └ Ex 5: `report_pandas.py` | 🟡 Explained 2026-11-02 | Worked example given (15 code lines vs 111 in Task 2): `Path(__file__).parent.parent`, `main()`, `print(..., sep="\n")`, `to_string()` / `index=False`. To do: type it, run it, commit |
-| Task 4: explore a real dataset (EDA) + NumPy basics | ⬜ Not started | |
+| ├ Ex 4: charts | ✅ Done 2026-11-02 | Bar + line + seaborn charts correct; both PNGs saved. Heading and preference answer tidied; Run All 1–36 clean. Committed `a646ff1` |
+| └ Ex 5: `report_pandas.py` | ✅ Done 2026-11-02 | Correct from any folder; added `to_string(float_format=...)` unprompted. Ruff: `f` on strings without `{}` (F541), lines > 88 (E501), trailing whitespace. Committed `47e33ab` |
+| **Task 4**: EDA + NumPy ([spec](02_data/TASK_4.md)) | 🟡 In progress | Titanic dataset (891 rows) in `02_data/data/titanic.csv` |
+| ├ Ex 1: NumPy basics | 🟡 Explained 2026-11-02 | Worked example given: arrays vs lists, dtype/shape, masks, `np.where`, 2D + `axis`, speed, `.to_numpy()`, `nanmean`, seeds |
+| ├ Ex 2: first look | ⬜ To do | |
+| ├ Ex 3: spot the problems | ⬜ To do | |
+| ├ Ex 4: clean | ⬜ To do | |
+| ├ Ex 5: ask questions | ⬜ To do | |
+| ├ Ex 6: charts | ⬜ To do | |
+| └ Ex 7: write-up | ⬜ To do | |
 
 ## Next session: start here
-1. Finish **Ex 5**: type `02_data/report_pandas.py`, run it in the `(dsllm)` terminal, check the numbers, commit. That completes Task 3.
-2. Ask Claude for **Task 4** (explore a real dataset + NumPy basics). Learning style: worked examples with explanations.
+1. `git pull` first (you may have worked on the other computer).
+2. Finish **Task 4 Ex 1**: type the cells from [02_data/notes/task4_ex1_numpy.md](02_data/notes/task4_ex1_numpy.md) into `02_data/numpy_basics.ipynb`, Restart → Run All, commit, push.
+3. Ask Claude for **"Ex 2"** (Titanic first look). Learning style: worked examples with explanations.
+4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`) and commit.
+
+## Working on two computers
+**Every session:** `git pull` at the start, then `git add .`, `git commit` and `git push` at the end. GitHub is the only sync. If you forget to push, the other computer won't have your work.
+
+**First-time setup on a new computer:**
+1. Install [Anaconda](https://www.anaconda.com/download) (or Miniconda), [Git](https://git-scm.com/download/win) and VS Code with the extensions from Task 1 (Python, Jupyter, Ruff, Data Wrangler, Rainbow CSV, Error Lens).
+2. Tell Git who you are, using the same name and email as on the work PC (check there with `git config user.name` and `git config user.email`):
+   ```powershell
+   git config --global user.name "Your Name"
+   git config --global user.email "you@example.com"
+   ```
+3. Clone into a folder **outside OneDrive**, for example `C:\dev`. Don't use OneDrive and Git to sync the same folder at the same time, because they can clash and corrupt the `.git` folder.
+   ```powershell
+   mkdir C:\dev; cd C:\dev
+   git clone https://github.com/adam-c4d/pythonllm-practise.git
+   cd pythonllm-practise
+   ```
+   Sign in to GitHub in the browser window that opens. The repository is private.
+4. Rebuild the Python environment from [environment.yml](environment.yml). It takes a few minutes.
+   ```powershell
+   conda init powershell        # once, then reopen the terminal
+   conda env create -f environment.yml
+   conda activate dsllm
+   python 01_python/check_setup.py
+   ```
+   ✅ It should print Python 3.13 and the numpy / pandas / sklearn / fastapi versions.
+5. In VS Code, open the folder, then go to **Python: Select Interpreter → dsllm**. In notebooks, use **Select Kernel → Python Environments → dsllm**.
+6. Start Claude in the folder and say **"let's continue"**. It reads `CLAUDE.md` and this plan.
 
 ## Habits
 - Type the code yourself; don't copy-paste.
-- Commit after each exercise.
-- Stuck for more than 20 minutes? Ask for a **hint**, not the answer.
+- Commit after each exercise, and push before you leave.
+- Stuck? Ask Claude for an **explanation or a worked example**.
 - Use `python -m pip install ...` inside the `(dsllm)` terminal.
 - If a script seems frozen the first time it uses a new library, wait 1–2 minutes before pressing `Ctrl+C`.
