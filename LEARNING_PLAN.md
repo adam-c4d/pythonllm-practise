@@ -34,14 +34,13 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 1: load and inspect | ✅ Done 2026-10-30 | `read_csv`, DataFrame vs Series, index, `shape`, `info`, dtypes, `NaN`, `isna().sum()` |
 | ├ Ex 2: clean | ✅ Done 2026-11-02 | `to_numeric(errors="coerce")`, `.str.strip()`, boolean masks (`\|` `&` `~`), `dropna(subset=)`, `astype`, `to_datetime`. Notebook tidied, Run All works, committed (`d5c448f`) |
 | ├ Ex 3: report, pandas style | ✅ Done 2026-11-02 | Column maths (vectorised), `.dt.strftime`, `groupby().sum()` (sorts groups), `nlargest`, `[[...]]` vs `[...]`, `.agg`. Fixed a `KeyError` (`price` → `unit_price`); learned to read tracebacks bottom-up. Committed `7eb09fd` |
-| ├ Ex 4: charts | 🟡 Explained 2026-11-02 | Worked example given: `Series.plot(kind=)`, `rcParams`, `bar_label`, `savefig` before `show`, `bbox_inches`, `xticks`, `set_ylim(bottom=0)`, seaborn `estimator="sum"` (default is mean). To do: type into notebook, check `output/` has the PNGs, commit |
-| └ Ex 5: `report_pandas.py` | ⬜ To do | |
+| ├ Ex 4: charts | ✅ Done 2026-11-02 | Bar + line + seaborn charts correct; both PNGs saved; Run All works. Committed `a646ff1`. Small tidy: heading says "Exercise: Charts" (add 4); fill in the "I prefer ___" answer |
+| └ Ex 5: `report_pandas.py` | 🟡 Explained 2026-11-02 | Worked example given (15 code lines vs 111 in Task 2): `Path(__file__).parent.parent`, `main()`, `print(..., sep="\n")`, `to_string()` / `index=False`. To do: type it, run it, commit |
 | Task 4: explore a real dataset (EDA) + NumPy basics | ⬜ Not started | |
 
 ## Next session: start here
-1. Finish **Ex 4**: type the chart cells into the notebook, check `02_data/output/` has the PNGs, **Restart → Run All**, commit.
-2. Ask Claude for **"Ex 5"** (`report_pandas.py`). Learning style: worked examples with explanations.
-3. Then Task 4 (explore a real dataset + NumPy basics).
+1. Finish **Ex 5**: type `02_data/report_pandas.py`, run it in the `(dsllm)` terminal, check the numbers, commit. That completes Task 3.
+2. Ask Claude for **Task 4** (explore a real dataset + NumPy basics). Learning style: worked examples with explanations.
 
 ## Habits
 - Type the code yourself; don't copy-paste.
