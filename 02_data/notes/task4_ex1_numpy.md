@@ -9,15 +9,24 @@ Create `02_data/numpy_basics.ipynb`, select the **dsllm** kernel, and type these
 ```python
 import numpy as np
 
-prices = [750.0, 15.5, 120.0]
+prices = [750.0, 15.5, 120.0]      # plain Python lists, not np.array yet
 quantities = [2, 10, 3]
 
-prices * quantities
+try:
+    prices * quantities
+except TypeError as e:
+    print("TypeError:", e)
+print(quantities * 2)
 ```
 ```
 TypeError: can't multiply sequence by non-int of type 'list'
+[2, 10, 3, 2, 10, 3]
 ```
-`quantities * 2` gives `[2, 10, 3, 2, 10, 3]`: it **repeats** the list. Lists are containers, not maths objects. That's why Task 2 needed loops.
+- Multiplying two lists fails, and `quantities * 2` **repeats** the list. Lists are containers, not maths objects. That's why Task 2 needed loops.
+- They must stay **plain lists** here. If you wrap them in `np.array(...)` in this cell, the multiplication works and the cell no longer shows the problem.
+- `try/except` shows the error without stopping **Run All**.
+
+> 💡 **A notebook displays only the last line of a cell.** When a cell has several results you want to see, wrap each one in `print(...)`, as in the cells below.
 
 ## Cell 2: NumPy arrays can
 
@@ -55,23 +64,16 @@ array(['1', '2.5', 'x'], dtype='<U32')
 
 ```python
 t = p * q
-t.sum(), t.mean(), t.max(), t.argmax()
+print(f"sum={t.sum()}, mean={t.mean():.2f}, max={t.max()}, argmax={t.argmax()}")
+print(t[t > 300])
+print(np.where(t > 300, "big", "small"))
 ```
 ```
-(np.float64(2015.0), np.float64(671.6666666666666), np.float64(1500.0), np.int64(0))
+sum=2015.0, mean=671.67, max=1500.0, argmax=0
+[1500.  360.]
+['big' 'small' 'big']
 ```
-```python
-t[t > 300]
-```
-```
-array([1500.,  360.])
-```
-```python
-np.where(t > 300, "big", "small")
-```
-```
-array(['big', 'small', 'big'], dtype='<U5')
-```
+`print()` shows an array without the `array(...)` wrapper and without commas. It's the same data either way.
 - `argmax()` gives the **position** of the largest value (0 = Laptop).
 - `t > 300` is a boolean mask, the same one pandas uses.
 - `np.where(cond, a, b)` is PHP's `$x > 300 ? 'big' : 'small'` (or SQL `CASE WHEN`) applied to every element.
@@ -88,20 +90,16 @@ sales.shape
 (3, 2)
 ```
 ```python
-sales[0]          # row 0
-sales[:, 0]       # column 0
+print("row 0:   ", sales[0])
+print("column 0:", sales[:, 0])
+print("axis=0:  ", sales.sum(axis=0))
+print("axis=1:  ", sales.sum(axis=1))
 ```
 ```
-array([  2., 750.])
-array([ 2., 10.,  3.])
-```
-```python
-sales.sum(axis=0)
-sales.sum(axis=1)
-```
-```
-array([ 15. , 885.5])
-array([752. ,  25.5, 123. ])
+row 0:    [  2. 750.]
+column 0: [ 2. 10.  3.]
+axis=0:   [ 15.  885.5]
+axis=1:   [752.   25.5 123. ]
 ```
 - `(3, 2)` means 3 rows and 2 columns. `[row, column]`, where `:` means "all".
 - `axis=0` sums **down** the rows (one total per column). `axis=1` sums **across** (one total per row).
@@ -116,7 +114,7 @@ arr = np.arange(1_000_000)
 %timeit [n * 2 for n in nums]
 %timeit arr * 2
 ```
-Measured on the work PC: about **49 ms vs 2.7 ms, roughly 18× faster**. Your numbers will differ.
+Measured on the work PC: about **47.5 ms vs 1.85 ms, roughly 26× faster** (a first test gave 18×). Your numbers will differ.
 - `%timeit` is a notebook "magic" command that runs the line many times and averages. `1_000_000`: the underscores are only for readability.
 - NumPy loops in compiled C code instead of Python. This matters with millions of rows, which is normal in ML.
 

@@ -37,7 +37,7 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 4: charts | ✅ Done 2026-11-02 | Bar + line + seaborn charts correct; both PNGs saved. Heading and preference answer tidied; Run All 1–36 clean. Committed `a646ff1` |
 | └ Ex 5: `report_pandas.py` | ✅ Done 2026-11-02 | Correct from any folder; added `to_string(float_format=...)` unprompted. Ruff: `f` on strings without `{}` (F541), lines > 88 (E501), trailing whitespace. Committed `47e33ab` |
 | **Task 4**: EDA + NumPy ([spec](02_data/TASK_4.md)) | 🟡 In progress | Titanic dataset (891 rows) in `02_data/data/titanic.csv` |
-| ├ Ex 1: NumPy basics | 🟡 Explained 2026-11-02 | Worked example given: arrays vs lists, dtype/shape, masks, `np.where`, 2D + `axis`, speed, `.to_numpy()`, `nanmean`, seeds |
+| ├ Ex 1: NumPy basics | 🔧 Reviewed 2026-11-03 | Cells 7–9 match exactly; NumPy ~26× faster. Fixes: Cell 1 must use plain lists (arrays hide the `TypeError`); a notebook shows only a cell's **last line**, so `print()` multi-result cells (5, 7); fill in the speed answer; Restart → Run All. Learned: `min`/`argmin`/`std`/`var` (explored unprompted) |
 | ├ Ex 2: first look | ⬜ To do | |
 | ├ Ex 3: spot the problems | ⬜ To do | |
 | ├ Ex 4: clean | ⬜ To do | |
