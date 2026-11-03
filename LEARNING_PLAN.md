@@ -20,6 +20,22 @@ A FastAPI app where you upload a CSV file and get:
 
 It uses every phase, so each skill you learn goes into one portfolio project.
 
+## Target dates
+Set 2026-11-03 for full-time study (6–8 h a day, 5–6 days a week). **Goal: start applying for AI Engineer / LLM developer jobs in late January 2027.**
+
+| Dates | Target |
+|---|---|
+| Wed 4 Nov | Finish Task 4 (Ex 5–7) → **Phase 2 done** |
+| 5–13 Nov | Phase 3: ML basics (scikit-learn) |
+| 16–20 Nov | Phase 4: FastAPI (your Laravel experience helps most here) |
+| 23 Nov – 4 Dec | Phase 5: LLMs |
+| 7–18 Dec | Capstone: "Ask Your Data" API |
+| 21 Dec – 1 Jan | Break / catch-up buffer |
+| 4–22 Jan | Job-ready: pytest, Docker, deployment, tool calling, LLM evals, GitHub and CV polish |
+| from ~25 Jan | Apply |
+
+**Daily rhythm:** about 3–4 exercises a day (for example, Task 4 Ex 1–4 on 3 Nov). If one phase overruns, move the dates after it back and let the December buffer absorb it.
+
 ## Progress
 
 | Task | Status | Notes |
@@ -40,15 +56,15 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 1: NumPy basics | ✅ Done 2026-11-03 | NumPy ~26× faster. Fixed: Cell 1 now shows lists failing vs arrays working; multi-result cells use `print()` (a notebook shows only a cell's **last line**). Explored `min`/`argmin`/`std`/`var` unprompted. Committed `594b707`. To do: Restart → Run All once (Cell 1 has no saved output) |
 | ├ Ex 2: first look | ✅ Done 2026-11-03 | All numbers match; Run All 1–8 clean. Committed `632b8d0`. Learned: `info()` prints and returns `None` (so don't put it in an f-string); use `display(df)` for tables, not `print(df)`. Tidy: fix the `info` cell, stale `'object'` comment, empty last cell |
 | ├ Ex 3: spot the problems | ✅ Done 2026-11-03 | All outputs match; fresh Run All clean; `display()` used correctly. Worked example in [notes](02_data/notes/task4_ex3_problems.md): `crosstab`, `.all()`, data leakage (`alive`), `duplicated(keep=False)`, multi-column `value_counts`, keep duplicates (no ID), £0 fares, outlier ≠ error, `quantile`, `.loc`. Learned: gaps in execution numbers mean cells ran out of order, so Restart → Run All before committing. Ex 2 fixes done. Committed `6cb462d` |
-| ├ Ex 4: clean | 🟡 Explained 2026-11-03 | Worked example in [notes](02_data/notes/task4_ex4_clean.md): `drop(columns=)` returns new, `=` never copies (`.copy()`), `groupby().transform("median")` vs `.median()` (window function vs GROUP BY), `fillna` aligns by index, pandas 3 `inplace` trap, `mode()[0]`, filling shrinks the spread. To do: type in, commit |
-| ├ Ex 5: ask questions | ⬜ To do | |
+| ├ Ex 4: clean | ✅ Done 2026-11-03 | All outputs match: `(891, 11)`, 0 missing, medians 37 / 29 / 24, port `S`; Run All 1–24 in order. Answers cell notes the side effect (age std 14.53 → 13.24). Worked example in [notes](02_data/notes/task4_ex4_clean.md): `drop(columns=)` returns new, `=` never copies (`.copy()`), `groupby().transform("median")` vs `.median()` (window function vs GROUP BY), `fillna` aligns by index, pandas 3 `inplace` trap, `mode()[0]`. Committed `d2f4731` |
+| ├ Ex 5: ask questions | 🟡 Explained 2026-11-03 | Worked example in [notes](02_data/notes/task4_ex5_questions.md): helper function `survival_by()`, `.agg(["count", "mean"])`, `pivot_table(margins=True)`, `pd.cut(bins=, labels=)` (right edge included; `category` dtype), `observed=True`, `join(suffixes=)`, why real ages (`df_raw`) for age questions, `family_size` (feature engineering), small groups give noisy rates. To do: type in, commit |
 | ├ Ex 6: charts | ⬜ To do | |
 | └ Ex 7: write-up | ⬜ To do | |
 
 ## Next session: start here
 1. `git pull` first (you may have worked on the other computer).
-2. Finish **Task 4 Ex 4**: in `02_data/titanic_eda.ipynb`, type the cells from [02_data/notes/task4_ex4_clean.md](02_data/notes/task4_ex4_clean.md). Restart → Run All, commit, push.
-3. Ask Claude for **"Ex 5"** (ask questions: survival by sex, class, age group, family size). Learning style: worked examples with explanations.
+2. Finish **Task 4 Ex 5**: in `02_data/titanic_eda.ipynb`, type the cells from [02_data/notes/task4_ex5_questions.md](02_data/notes/task4_ex5_questions.md). Restart → Run All, commit, push. Learning style: worked examples with explanations.
+3. Then **Ex 6** (charts) and **Ex 7** (write-up), then **"review all"**. That finishes Task 4 and Phase 2 (target: Wed 4 Nov).
 4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`); Restart → Run All in `numpy_basics.ipynb`.
 
 ## Working on two computers
