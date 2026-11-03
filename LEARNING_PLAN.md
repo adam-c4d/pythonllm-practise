@@ -37,8 +37,8 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | ├ Ex 4: charts | ✅ Done 2026-11-02 | Bar + line + seaborn charts correct; both PNGs saved. Heading and preference answer tidied; Run All 1–36 clean. Committed `a646ff1` |
 | └ Ex 5: `report_pandas.py` | ✅ Done 2026-11-02 | Correct from any folder; added `to_string(float_format=...)` unprompted. Ruff: `f` on strings without `{}` (F541), lines > 88 (E501), trailing whitespace. Committed `47e33ab` |
 | **Task 4**: EDA + NumPy ([spec](02_data/TASK_4.md)) | 🟡 In progress | Titanic dataset (891 rows) in `02_data/data/titanic.csv` |
-| ├ Ex 1: NumPy basics | 🔧 Reviewed 2026-11-03 | Cells 7–9 match exactly; NumPy ~26× faster. Fixes: Cell 1 must use plain lists (arrays hide the `TypeError`); a notebook shows only a cell's **last line**, so `print()` multi-result cells (5, 7); fill in the speed answer; Restart → Run All. Learned: `min`/`argmin`/`std`/`var` (explored unprompted) |
-| ├ Ex 2: first look | ⬜ To do | |
+| ├ Ex 1: NumPy basics | ✅ Done 2026-11-03 | NumPy ~26× faster. Fixed: Cell 1 now shows lists failing vs arrays working; multi-result cells use `print()` (a notebook shows only a cell's **last line**). Explored `min`/`argmin`/`std`/`var` unprompted. Committed `594b707`. To do: Restart → Run All once (Cell 1 has no saved output) |
+| ├ Ex 2: first look | 🟡 Explained 2026-11-03 | Worked example in [notes](02_data/notes/task4_ex2_first_look.md): `info`, `describe` (+ `include="str"`), skew (mean vs median), category-as-number, `isna().mean()`, `:.1%`, `value_counts(dropna=False)`. To do: type into `titanic_eda.ipynb`, commit |
 | ├ Ex 3: spot the problems | ⬜ To do | |
 | ├ Ex 4: clean | ⬜ To do | |
 | ├ Ex 5: ask questions | ⬜ To do | |
@@ -47,9 +47,9 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 
 ## Next session: start here
 1. `git pull` first (you may have worked on the other computer).
-2. Finish **Task 4 Ex 1**: type the cells from [02_data/notes/task4_ex1_numpy.md](02_data/notes/task4_ex1_numpy.md) into `02_data/numpy_basics.ipynb`, Restart → Run All, commit, push.
-3. Ask Claude for **"Ex 2"** (Titanic first look). Learning style: worked examples with explanations.
-4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`) and commit.
+2. Finish **Task 4 Ex 2**: create `02_data/titanic_eda.ipynb`, type the cells from [02_data/notes/task4_ex2_first_look.md](02_data/notes/task4_ex2_first_look.md), Restart → Run All, commit, push.
+3. Ask Claude for **"Ex 3"** (spot the problems: redundant columns, duplicates, odd values). Learning style: worked examples with explanations.
+4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`); Restart → Run All in `numpy_basics.ipynb`.
 
 ## Working on two computers
 **Every session:** `git pull` at the start, then `git add .`, `git commit` and `git push` at the end. GitHub is the only sync. If you forget to push, the other computer won't have your work.
