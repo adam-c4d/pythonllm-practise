@@ -38,8 +38,8 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 | └ Ex 5: `report_pandas.py` | ✅ Done 2026-11-02 | Correct from any folder; added `to_string(float_format=...)` unprompted. Ruff: `f` on strings without `{}` (F541), lines > 88 (E501), trailing whitespace. Committed `47e33ab` |
 | **Task 4**: EDA + NumPy ([spec](02_data/TASK_4.md)) | 🟡 In progress | Titanic dataset (891 rows) in `02_data/data/titanic.csv` |
 | ├ Ex 1: NumPy basics | ✅ Done 2026-11-03 | NumPy ~26× faster. Fixed: Cell 1 now shows lists failing vs arrays working; multi-result cells use `print()` (a notebook shows only a cell's **last line**). Explored `min`/`argmin`/`std`/`var` unprompted. Committed `594b707`. To do: Restart → Run All once (Cell 1 has no saved output) |
-| ├ Ex 2: first look | 🟡 Explained 2026-11-03 | Worked example in [notes](02_data/notes/task4_ex2_first_look.md): `info`, `describe` (+ `include="str"`), skew (mean vs median), category-as-number, `isna().mean()`, `:.1%`, `value_counts(dropna=False)`. To do: type into `titanic_eda.ipynb`, commit |
-| ├ Ex 3: spot the problems | ⬜ To do | |
+| ├ Ex 2: first look | ✅ Done 2026-11-03 | All numbers match; Run All 1–8 clean. Committed `632b8d0`. Learned: `info()` prints and returns `None` (so don't put it in an f-string); use `display(df)` for tables, not `print(df)`. Tidy: fix the `info` cell, stale `'object'` comment, empty last cell |
+| ├ Ex 3: spot the problems | ✅ Done 2026-11-03 | All outputs match; fresh Run All clean; `display()` used correctly. Worked example in [notes](02_data/notes/task4_ex3_problems.md): `crosstab`, `.all()`, data leakage (`alive`), `duplicated(keep=False)`, multi-column `value_counts`, keep duplicates (no ID), £0 fares, outlier ≠ error, `quantile`, `.loc`. Learned: gaps in execution numbers mean cells ran out of order, so Restart → Run All before committing |
 | ├ Ex 4: clean | ⬜ To do | |
 | ├ Ex 5: ask questions | ⬜ To do | |
 | ├ Ex 6: charts | ⬜ To do | |
@@ -47,8 +47,8 @@ It uses every phase, so each skill you learn goes into one portfolio project.
 
 ## Next session: start here
 1. `git pull` first (you may have worked on the other computer).
-2. Finish **Task 4 Ex 2**: create `02_data/titanic_eda.ipynb`, type the cells from [02_data/notes/task4_ex2_first_look.md](02_data/notes/task4_ex2_first_look.md), Restart → Run All, commit, push.
-3. Ask Claude for **"Ex 3"** (spot the problems: redundant columns, duplicates, odd values). Learning style: worked examples with explanations.
+2. If not done yet: in `02_data/titanic_eda.ipynb`, fix the 2 Ex 2 cells (`info`, `display`), delete the empty Markdown cells, then Restart → Run All, commit, push.
+3. Ask Claude for **"Ex 4"** (clean: drop columns, fill missing ages by class). Learning style: worked examples with explanations.
 4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`); Restart → Run All in `numpy_basics.ipynb`.
 
 ## Working on two computers
