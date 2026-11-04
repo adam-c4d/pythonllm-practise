@@ -61,19 +61,19 @@ Set 2026-11-03 for full-time study (6–8 h a day, 5–6 days a week). **Goal: s
 | ├ Ex 6: charts | ✅ Done 2026-11-04 | All 4 charts correct and saved; correlations match (−0.54 / −0.34 / +0.26). Histogram fixed to `df_raw["age"]` with `savefig`. Worked example in [notes](02_data/notes/task4_ex6_charts.md): `histplot(bins=)`, `barplot(hue=, palette={dict})` (mean of 0/1 = rate; 95% CI lines), `PercentFormatter`, box plot anatomy, `fill=False`, `astype(int)`, `corr()`, `heatmap(mask=, vmin=, vmax=)`, `.iloc`, `np.triu`, diverging colours; correlation only sees straight lines and isn't causation |
 | └ Ex 7: write-up | ✅ Done 2026-11-04 | Numbers cell output matches; 5 findings + 1 limitation. Worked example in [notes](02_data/notes/task4_ex7_writeup.md): writing findings for a manager (so-what first, number + comparison, round, no column names, no causal claims), headline numbers pulled from code (`.loc`, `:.0f` vs `:.0%`), 1 limitation. Review fixes done (`savefig`, duplicate heading, import order, Run All in both notebooks). Committed `c43b0c5` |
 | **Task 5**: first ML model ([spec](03_ml/TASK_5.md)) | 🟡 In progress (started 2026-11-04) | Predict Titanic survival with scikit-learn in `03_ml/titanic_model.ipynb`: split → baseline → model → metrics → leakage → pipeline → trees → cross-validation → save |
-| ├ Ex 1: X, y, split, baseline | 🟡 Explained 2026-11-04 | Worked example in [notes](03_ml/notes/task5_ex1_split_baseline.md): ML = learning rules from examples; `fit` / `predict` / `score` (one contract for every model); `X` / `y`; `train_test_split(test_size=, random_state=, stratify=)`; `DummyClassifier` baseline 61.5%. To do: type in, commit |
-| ├ Ex 2: logistic regression | ⬜ To do | |
-| ├ Ex 3: confusion matrix, precision, recall | ⬜ To do | |
-| ├ Ex 4: data leakage | ⬜ To do | |
-| ├ Ex 5: pipelines | ⬜ To do | |
-| ├ Ex 6: trees, forests, overfitting | ⬜ To do | |
-| ├ Ex 7: cross-validation, tuning | ⬜ To do | |
-| └ Ex 8: save and load the model | ⬜ To do | |
+| ├ Ex 1: X, y, split, baseline | ✅ Done 2026-11-04 | All outputs match (712 / 179, 38.3% / 38.5%, 41.3% without `stratify`, baseline 61.5%); Run All 1–5 in order. Worked example in [notes](03_ml/notes/task5_ex1_split_baseline.md): ML = learning rules from examples; `fit` / `predict` / `score` (one contract for every model); `train_test_split(stratify=)`; `DummyClassifier` |
+| ├ Ex 2: logistic regression | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex2_logistic_regression.md): `simple_features()` for both sets, `fit`, `predict_proba[:, 1]`, `coef_` / `intercept_`, weighted sum + sigmoid. To do: type in, commit |
+| ├ Ex 3: confusion matrix, precision, recall | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex3_confusion_matrix.md): `confusion_matrix`, `classification_report`, `ConfusionMatrixDisplay`, the 0.5 cut-off trade-off |
+| ├ Ex 4: data leakage | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex4_leakage.md): `alive` → fake 100%; fitting on all rows (median 28.0 vs 28.5) |
+| ├ Ex 5: pipelines | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex5_pipelines.md): `Pipeline`, `ColumnTransformer`, `SimpleImputer`, `StandardScaler`, `OneHotEncoder(handle_unknown=)`, `named_steps`, learned attributes end in `_` |
+| ├ Ex 6: trees, forests, overfitting | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex6_trees.md): `make_model()` + `clone`, overfitting (98% vs 82%), `max_depth`, `plot_tree`, random forest, `feature_importances_` caveat |
+| ├ Ex 7: cross-validation, tuning | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex7_cross_validation.md): 5-fold `cross_val_score`, `GridSearchCV` (`model__` names), `cv_results_`, test set once at the end |
+| └ Ex 8: save and load the model | 🟡 Explained 2026-11-04 | [notes](03_ml/notes/task5_ex8_save_model.md): `joblib.dump` / `load` (trust + version warnings), predict from a list of dicts, `/predict` preview |
 
 ## Next session: start here
 1. `git pull` first (you may have worked on the other computer).
-2. **Task 5 Ex 1:** create `03_ml/titanic_model.ipynb` (dsllm kernel) and type the cells from [03_ml/notes/task5_ex1_split_baseline.md](03_ml/notes/task5_ex1_split_baseline.md). Restart → Run All, commit, push.
-3. Ask Claude for **"Ex 2"**, and so on through Ex 8 (Phase 3 target: 5–13 Nov; Task 6, regression, follows). Learning style: worked examples with explanations.
+2. **Task 5 Ex 2–8:** all worked examples are ready in [03_ml/notes/](03_ml/notes/) (`task5_ex2_...` to `task5_ex8_...`). Type them into `03_ml/titanic_model.ipynb` in order, Restart → Run All, and commit after each exercise.
+3. Ask Claude to **"check"** after any exercise, and **"review all"** at the end. Then Task 6 (regression). Phase 3 target: 5–13 Nov. Learning style: worked examples with explanations.
 4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`); rename `## Exercise 5:` to `## Exercise 5: Ask questions` in `titanic_eda.ipynb`.
 
 ## Working on two computers
