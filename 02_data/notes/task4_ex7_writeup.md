@@ -60,9 +60,9 @@ Limitation: 20% of ages missing (177 of 891)
 
 ## Cell 2: The write-up (Markdown)
 
-```markdown
-## Exercise 7: Findings
+This cell has no heading of its own, because the `## Exercise 7: Findings` heading cell is already above Cell 1.
 
+```markdown
 **Who survived the Titanic?** An analysis of 891 passengers.
 
 1. **Sex was the biggest factor:** women were almost four times as likely to survive as men (74% vs 19%).
