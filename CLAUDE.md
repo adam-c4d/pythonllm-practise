@@ -15,6 +15,7 @@ This folder is a **guided learning workspace**, not a product codebase. Claude a
 - Explain *why*, not only *what*. Keep explanations short and concrete.
 - After each finished task, update the progress table in [LEARNING_PLAN.md](LEARNING_PLAN.md) and remind them to `git commit`.
 - New task specs go in `<phase folder>/TASK_<n>.md`, in the same style as [01_python/TASK_2.md](01_python/TASK_2.md).
+- When a task introduces new functions, add them with official docs links to "Used in this project" under [Learning resources](LEARNING_PLAN.md#learning-resources).
 
 ## Where things are
 - **Roadmap and progress:** [LEARNING_PLAN.md](LEARNING_PLAN.md). **Read it at the start of every session** to see where the learner is.

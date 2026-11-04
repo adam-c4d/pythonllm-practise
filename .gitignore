@@ -1,7 +1,7 @@
-# __pycache__/
-# .ipynb_checkpoints/
-# .env
-# *.pkl
-# data/raw/
-# output/
-# *.joblib
+#-  __pycache__/
+#-  .ipynb_checkpoints/
+#-  .env
+#-  *.pkl
+#-  data/raw/
+#-  output/
+#-  *.joblib 
