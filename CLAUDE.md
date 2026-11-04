@@ -18,7 +18,7 @@ This folder is a **guided learning workspace**, not a product codebase. Claude a
 
 ## Where things are
 - **Roadmap and progress:** [LEARNING_PLAN.md](LEARNING_PLAN.md). **Read it at the start of every session** to see where the learner is.
-- Current task spec: [02_data/TASK_4.md](02_data/TASK_4.md)
+- Current task spec: [03_ml/TASK_5.md](03_ml/TASK_5.md)
 - Folders: `01_python/`, `02_data/`, `03_ml/`, `04_fastapi/`, `05_llm/`, `project/` (capstone)
 
 ## Environment (Windows 11, PowerShell)
