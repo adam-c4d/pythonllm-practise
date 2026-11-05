@@ -76,6 +76,7 @@ Set 2026-11-03 for full-time study (6–8 h a day, 5–6 days a week). **Goal: s
 1. `git pull` first (you may have worked on the other computer).
 2. **Task 5 Ex 2–8:** all worked examples are ready in [03_ml/notes/](03_ml/notes/) (`task5_ex2_...` to `task5_ex8_...`). Type them into `03_ml/titanic_model.ipynb` in order, Restart → Run All, and commit after each exercise.
 3. Ask Claude to **"check"** after any exercise, and **"review all"** at the end. Then Task 6 (regression). Phase 3 target: 5–13 Nov. Learning style: worked examples with explanations.
+4. **Plan change (agreed 2026-11-04):** add **PyTorch and TensorFlow** (deep learning) to the roadmap. Local AI-agency jobs ask for them, e.g. BeeSolver Technology (Mohali): "AI/ML Engineer, Python/PyTorch, 3+ yrs". Decide with Claude where it fits (likely a short block after Phase 3) and how long it takes.
 4. Optional: format `report_pandas.py` with Ruff (`Shift+Alt+F`); rename `## Exercise 5:` to `## Exercise 5: Ask questions` in `titanic_eda.ipynb`.
 
 ## Working on two computers
