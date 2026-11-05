@@ -87,7 +87,9 @@ Learned medians: {'pclass': np.float64(3.0), 'age': np.float64(28.5), 'sibsp': n
 ```python
 sample = X_train.head(3)
 display(sample)
-display(pd.DataFrame(prep.transform(sample), columns=names, index=sample.index).round(2))
+display(
+    pd.DataFrame(prep.transform(sample), columns=names, index=sample.index).round(2)
+)
 ```
 ```
      pclass   sex  age  sibsp  parch      fare embarked
