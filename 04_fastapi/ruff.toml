@@ -1,0 +1,7 @@
+# Ruff settings for Phase 4 (VS Code's Ruff extension reads this file too).
+# VS Code runs Ruff from the repo root, so Ruff can't see that `main`, `schemas`, ...
+# are your own files in this folder. It would then sort them in with the installed
+# packages (fastapi, pydantic). This list tells Ruff they're yours, so Shift+Alt+O puts
+# them in their own block at the end: standard library, third-party, your own modules.
+[lint.isort]
+known-first-party = ["config", "dependencies", "diamonds", "main", "schemas"]
