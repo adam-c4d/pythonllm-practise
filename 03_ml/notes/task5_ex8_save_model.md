@@ -120,6 +120,8 @@ Survival chance: 84%
 - **API preview:** dict → `pd.DataFrame([request])` → `predict_proba` is exactly what the FastAPI `/predict` endpoint will do in Phase 4. An unknown port (`"X"`) doesn't crash the model, but the API should validate input first (Pydantic).
 ```
 
+📚 **Learn more:** [Model persistence (joblib)](https://scikit-learn.org/stable/model_persistence.html) · [`predict_proba`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.predict_proba)
+
 ## ✅ Task 5 done when
 - [ ] All 8 exercises have their cells and an answers cell.
 - [ ] **Restart → Run All** runs top to bottom with no errors (the grid search takes a few seconds).

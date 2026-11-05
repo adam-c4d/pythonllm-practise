@@ -1,5 +1,6 @@
-# Rebuild the learning environment on any computer:
-#   conda env create -f environment.yml
+# Rebuild the learning environment on any computer (full steps: SETUP.md):
+#   conda env create -f environment.yml      # first time
+#   conda env update -n dsllm -f environment.yml   # after this file changes
 #   conda activate dsllm
 name: dsllm
 channels:
@@ -15,5 +16,10 @@ dependencies:
   - ipykernel
   - pip
   - pip:
+      # PyTorch, CPU-only build (Task 7). About 200 MB.
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.15.*
       - fastapi[standard]
       - python-dotenv
+      - openai          # LLM client, used with Ollama (Phase 5)
+      - pytest          # tests (Task 8 onwards)

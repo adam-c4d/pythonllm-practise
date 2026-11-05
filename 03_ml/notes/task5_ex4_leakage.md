@@ -64,4 +64,6 @@ Median age, training rows:  28.5
 - **The fix for (b):** fit every preparation step on the training set only, then apply it to the test set. A `Pipeline` does this automatically (Exercise 5).
 ```
 
+📚 **Learn more:** [Common pitfalls: data leakage](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage)
+
 Then commit, push, and ask Claude for **"Ex 5"** (pipelines).

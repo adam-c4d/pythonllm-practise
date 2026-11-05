@@ -117,4 +117,6 @@ Test accuracy (once, at the end): 79.9%
 - **Rule:** choose models and settings with cross-validation; touch the test set once, at the end.
 ```
 
+📚 **Learn more:** [User guide: cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html) · [User guide: tuning with grid search](https://scikit-learn.org/stable/modules/grid_search.html) · [`GridSearchCV`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+
 Then commit, push, and ask Claude for **"Ex 8"** (save the model and use it).

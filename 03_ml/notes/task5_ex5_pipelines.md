@@ -69,7 +69,7 @@ prep = pipe.named_steps["prep"]
 names = prep.get_feature_names_out()
 print(names)
 medians = prep.named_transformers_["num"].named_steps["impute"].statistics_
-print("Learned medians:", dict(zip(numeric, medians)))
+print("Learned medians:", dict(zip(numeric, medians, strict=True)))
 ```
 ```
 ['num__pclass' 'num__age' 'num__sibsp' 'num__parch' 'num__fare'
@@ -138,5 +138,7 @@ dtype: float64
 - **Inside:** 7 columns become 10 after one-hot (`sex` → 2, `embarked` → 3). The learned medians are `[3, 28.5, 0, 0, 14.4542]`. The **28.5** (not 28.0) proves it only learned from the training rows, so no leakage.
 - **Scaled weights are comparable:** sex is strongest (±1.3), then class (−0.92) and age (−0.50); fare adds little (+0.10) once class is known.
 ```
+
+📚 **Learn more:** [User guide: pipelines and composite estimators](https://scikit-learn.org/stable/modules/compose.html) · [`ColumnTransformer`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) · [`SimpleImputer`](https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html) · [`OneHotEncoder`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
 
 Then commit, push, and ask Claude for **"Ex 6"** (decision trees and overfitting).

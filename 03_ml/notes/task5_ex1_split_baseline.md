@@ -123,4 +123,6 @@ Baseline accuracy on the test set: 61.5%
 - **Baseline:** always predicting "died" scores **61.5%**, so a real model must beat that to have learned anything.
 ```
 
+📚 **Learn more:** [`train_test_split`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) · [`DummyClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html) · [scikit-learn: Getting started](https://scikit-learn.org/stable/getting_started.html)
+
 Then commit, push, and ask Claude for **"Ex 2"** (your first real model: logistic regression).

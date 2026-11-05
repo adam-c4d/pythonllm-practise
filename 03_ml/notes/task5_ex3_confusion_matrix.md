@@ -117,4 +117,6 @@ threshold 0.7: precision 0.94, recall 0.46, predicted survivors 34
 - **The cut-off is a trade-off:** 0.3 gives recall 0.81 but precision 0.62; 0.7 gives precision 0.94 but recall 0.46. Choose it from the cost of each mistake.
 ```
 
+📚 **Learn more:** [`confusion_matrix`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html) · [`classification_report`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) · [`ConfusionMatrixDisplay`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ConfusionMatrixDisplay.html) · [User guide: classification metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+
 Then commit, push, and ask Claude for **"Ex 4"** (data leakage).

@@ -103,4 +103,6 @@ dtype: float64
 - **Still wrong:** 1,034 negative prices, because the grade weights are fixed dollar amounts, not percentages.
 ```
 
+📚 **Learn more:** [`OneHotEncoder`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) · [`Series.filter`](https://pandas.pydata.org/docs/reference/api/pandas.Series.filter.html) · [User guide: pipelines and composite estimators](https://scikit-learn.org/stable/modules/compose.html)
+
 Then commit, push, and ask Claude for **"check, then ex 5"** (log scales).

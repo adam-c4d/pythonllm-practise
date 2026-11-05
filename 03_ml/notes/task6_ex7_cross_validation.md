@@ -96,4 +96,6 @@ tuned gradient boosting  MAE $   285   RMSE $   554   R² 0.981
 - **Lesson:** baseline $3,021 → $285. The right shape (log scales) and model (boosting) did the work; tuning added about 1%.
 ```
 
+📚 **Learn more:** [User guide: the `scoring` parameter](https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter) · [`cross_val_score`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) · [`GridSearchCV`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+
 Then commit, push, and ask Claude for **"check, then ex 8"** (errors in %, save and use the model).

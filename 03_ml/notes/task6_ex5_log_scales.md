@@ -126,4 +126,6 @@ Biggest prediction: $1,005,632 for a 4.01 carat diamond (real price $15,223)
 - **Trap:** logging only the price makes price exponential in carat: R² **−18.97**, and a 4.01 carat diamond is predicted at $1,005,632 (real $15,223). Check the shape with a chart and look at RMSE, not only MAE.
 ```
 
+📚 **Learn more:** [User guide: transforming the target](https://scikit-learn.org/stable/modules/compose.html#transforming-target-in-regression) · [`TransformedTargetRegressor`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.TransformedTargetRegressor.html) · [`FunctionTransformer`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.FunctionTransformer.html) · [`Axes.set_xscale`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xscale.html)
+
 Then commit, push, and ask Claude for **"check, then ex 6"** (trees and gradient boosting).

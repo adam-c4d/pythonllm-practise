@@ -87,4 +87,6 @@ The 3 regression scores:
 - **Problem:** 339 test diamonds get a negative price. A straight line doesn't know that prices can't go below 0.
 ```
 
+📚 **Learn more:** [`LinearRegression`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) · [User guide: ordinary least squares](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares) · [`root_mean_squared_error`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.root_mean_squared_error.html) · [`r2_score`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html)
+
 Then commit, push, and ask Claude for **"check, then ex 3"** (look at the errors).

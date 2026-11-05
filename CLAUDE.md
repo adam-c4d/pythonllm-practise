@@ -25,12 +25,16 @@ This folder is a **guided learning workspace**, not a product codebase. Claude a
 ## Environment (Windows 11, PowerShell)
 The learner works on **two computers** (work PC and home PC), syncing through GitHub (`git pull` at the start of a session, `git push` at the end). The notes below describe the **work PC**. On another machine, check paths and ports before relying on them. The env is rebuilt from [environment.yml](environment.yml).
 
+- **Install guide for any PC: [SETUP.md](SETUP.md).** The learner runs downloads and installs themselves: give them the exact commands (and add new ones to SETUP.md) instead of running long installs.
 - Conda env **`dsllm`**, Python 3.13: `C:\Users\phpde\anaconda3\envs\dsllm\python.exe`
-  - Installed: numpy, pandas, matplotlib, seaborn, scikit-learn, jupyter, ipykernel, fastapi[standard], python-dotenv, httpx
+  - Installed: numpy, pandas, matplotlib, seaborn, scikit-learn, jupyter, ipykernel, fastapi[standard], python-dotenv, httpx, **torch 2.15 (CPU)**, **openai**, **pytest** (2026-11-05)
   - Install with `python -m pip install ...` (the machine also has Anaconda base Python 3.14 and a standalone Python 3.15, so plain `pip` can go to the wrong place)
+  - `python 01_python/check_setup.py` prints every library version and whether Ollama is running.
+- **Ollama 0.40** (installed 2026-11-05) serves LLMs at `http://127.0.0.1:11434`; course code uses the `openai` package with `base_url="http://127.0.0.1:11434/v1"`. Models: `qwen2.5:1.5b` (course default; chat, JSON, tool calls), `nomic-embed-text` (embeddings), `qwen2.5:3b` (optional). The CLI is `"$LOCALAPPDATA/Programs/Ollama/ollama.exe"` if `ollama` isn't on PATH yet. The work PC has 8 GB RAM, a 6-core i5 and no usable GPU, so keep prompts short.
 - **Running `dsllm`'s `python.exe` without activating the env crashes numpy** (`Windows fatal exception: code 0xc06d007f`, exit 127) on the first matrix operation, for example any matplotlib bar chart. Base Anaconda's `Library\bin` (an older `mkl_rt.2.dll`) is on PATH and gets loaded first. To run code that uses numpy/pandas/matplotlib, use `conda run -n dsllm python ...` or an activated `(dsllm)` terminal. Plain-Python scripts (Task 2) are unaffected.
 - Scripts import each other by bare name (`from models import Sale`), so run them from inside their folder, or with the full interpreter path.
-- **Port 8000 is taken** by a local Laravel server (`php artisan serve`), and Apache/MySQL also run (80/443/3306). In Phase 4, run FastAPI with `fastapi dev main.py --port 8001`.
+- **Port 8000 is taken** by a local Laravel server (`php artisan serve`), and Apache/MySQL also run (80/443/3306). In Phase 4, run FastAPI with `fastapi dev main.py --port 8001`; the capstone project uses `--port 8002`. In PowerShell use `curl.exe`, not `curl`. To stop a `fastapi dev` server you started in the background, kill both the reloader and the "Started server process [N]" PID.
 - The first import of a library in a new env can take minutes (likely Windows Defender scanning new files). This happens once and isn't a bug.
 - The folder is on OneDrive. Keep environments in conda (not in this folder); never commit `.env`.
-- Not installed yet: **Ollama** (install at Phase 5 for free local LLMs), Docker (optional, near the end).
+- Not installed yet: Docker (January, job-ready block).
+- Each phase folder has `notes/` (worked examples), `TASK_<n>.md` specs and `examples/` (runnable reference solutions). The learner types their own version first; `examples/` is for comparing and getting unstuck.

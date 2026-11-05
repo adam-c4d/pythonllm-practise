@@ -125,4 +125,6 @@ That's all `fit` did: it searched for the 6 numbers that make these chances matc
 - **How it predicts:** a weighted sum of the features, squashed into 0–1 by the sigmoid function. Above 0.5 → "survived".
 ```
 
+📚 **Learn more:** [`LogisticRegression`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) · [User guide: logistic regression](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+
 Then commit, push, and ask Claude for **"Ex 3"** (is 81% good? the confusion matrix).

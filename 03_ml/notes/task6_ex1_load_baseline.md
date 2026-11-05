@@ -137,4 +137,6 @@ Baseline MAE: $3,021
 - **Baseline:** always predicts the mean, $3,939. **MAE $3,021**. Every real model must beat this.
 ```
 
+📚 **Learn more:** [`DummyRegressor`](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html) · [`mean_absolute_error`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html) · [User guide: regression metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics) · [`Axes.hist`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html)
+
 Then commit, push, and ask Claude for **"check, then ex 2"** (a straight line: your first regression model).

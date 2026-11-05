@@ -65,4 +65,6 @@ carat
 - **Lesson:** errors with a pattern mean the model has the wrong shape. Also visible: stripes at 1.0, 1.5 and 2.0 carats ("magic" weights) and no prices above $18,823.
 ```
 
+📚 **Learn more:** [`Axes.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html) · [`pandas.cut`](https://pandas.pydata.org/docs/reference/api/pandas.cut.html) · [`PredictionErrorDisplay`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.PredictionErrorDisplay.html) (scikit-learn's ready-made error chart)
+
 Then commit, push, and ask Claude for **"check, then ex 4"** (all features, and the cut puzzle).

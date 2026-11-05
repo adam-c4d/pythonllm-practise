@@ -137,6 +137,8 @@ Rejected: Found unknown categories ['Excellent'] in column 0 during transform
 - **Unknown grade:** `"Excellent"` is rejected with a `ValueError`. In the API, Pydantic should reject it first (422), like Laravel's `Rule::in`.
 ```
 
+📚 **Learn more:** [`mean_absolute_percentage_error`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_percentage_error.html) · [pandas: named aggregation](https://pandas.pydata.org/docs/user_guide/groupby.html#named-aggregation) · [Model persistence (joblib)](https://scikit-learn.org/stable/model_persistence.html)
+
 ## ✅ Task 6 done when
 - [ ] All 8 exercises have their cells and an answers cell.
 - [ ] **Restart → Run All** runs top to bottom with no errors (about 30 seconds).

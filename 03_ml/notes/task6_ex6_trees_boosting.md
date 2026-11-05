@@ -129,4 +129,6 @@ gradient boosting: 0.4 MB
 - **File size:** forest **338.6 MB** vs boosting 0.4 MB. Same accuracy, so boosting is the one to use (and the forest is too big for GitHub).
 ```
 
+📚 **Learn more:** [User guide: histogram-based gradient boosting](https://scikit-learn.org/stable/modules/ensemble.html#histogram-based-gradient-boosting) · [`HistGradientBoostingRegressor`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html) · [`RandomForestRegressor`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) · [`OrdinalEncoder`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html)
+
 Then commit, push, and ask Claude for **"check, then ex 7"** (cross-validation and tuning).

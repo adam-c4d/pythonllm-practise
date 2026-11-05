@@ -129,4 +129,6 @@ dtype: float64
 - **Random forest:** 100 voting trees, train 98.3% / test 81.6%. Importances: fare 0.26, age 0.24, sex 0.29 in total (0.16 + 0.13). Impurity importance favours columns with many values, so read it with care.
 ```
 
+📚 **Learn more:** [User guide: decision trees](https://scikit-learn.org/stable/modules/tree.html) · [`DecisionTreeClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) · [`RandomForestClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) · [`plot_tree`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html)
+
 Then commit, push, and ask Claude for **"Ex 7"** (cross-validation and tuning).
