@@ -20,7 +20,8 @@ candidates = {
 }
 for name, estimator in candidates.items():
     scores = cross_val_score(make_model(estimator), X_train, y_train, cv=5)
-    print(f"{name:<20} {scores.mean():.1%} ± {scores.std():.1%}   folds: {scores.round(3)}")
+    print(f"{name:<20} {scores.mean():.1%} ± {scores.std():.1%}",
+          f"  folds: {scores.round(3)}")
 ```
 ```
 logistic regression  79.6% ± 1.9%   folds: [0.79  0.762 0.803 0.817 0.81 ]

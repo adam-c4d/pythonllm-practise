@@ -1,6 +1,6 @@
 # Task 5, Exercise 8: Save the model and use it (worked example)
 
-Continue in `03_ml/titanic_model.ipynb`. Add a Markdown cell `## Exercise 8: Save and use the model`, then type these cells. The outputs are real (run on 2026-11-04).
+Continue in `03_ml/titanic_model.ipynb`. Add a Markdown cell `## Exercise 8: Save and use the model`, then type these cells. The outputs are real (run on 2026-11-04, re-checked 2026-11-05).
 
 **Add to the imports cell at the top:**
 ```python
@@ -50,7 +50,7 @@ Saved titanic_model.joblib (350 KB)
 - **What's inside: the whole pipeline.** The learned medians, scaler means, encoder categories and all 100 trees, everything `fit` learned. The app sends raw passengers, and the file does all the cleaning and predicting.
 - **`joblib`** is scikit-learn's recommended tool for saving models. It's a faster version of Python's `pickle` for big NumPy arrays.
 - **`model_path.stat().st_size`** is the file size in bytes. `/ 1024` gives KB.
-- **The file isn't committed to Git** (`*.joblib` is in `.gitignore`). It's rebuilt by running the notebook, just like the charts in `output/`. That's also how the other computer gets it: Restart → Run All.
+- **Git:** your `.gitignore` rules are commented out, so `git add .` commits this file too (350 KB, fine for a learning repo). The other computer then gets it with `git pull`, or rebuilds it with Restart → Run All. In real projects, model files are usually kept out of Git (`*.joblib` in `.gitignore`) and stored elsewhere, because they're big binaries that change every time you retrain.
 
 ## Cell 2: Load it back
 
@@ -70,10 +70,14 @@ Same predictions as before: True
 
 ```python
 new_passengers = pd.DataFrame([
-    {"pclass": 1, "sex": "female", "age": 17, "sibsp": 1, "parch": 1, "fare": 100.0, "embarked": "S"},
-    {"pclass": 3, "sex": "male", "age": 20, "sibsp": 0, "parch": 0, "fare": 8.05, "embarked": "S"},
-    {"pclass": 2, "sex": "male", "age": 5, "sibsp": 1, "parch": 1, "fare": 26.0, "embarked": "S"},
-    {"pclass": 3, "sex": "female", "age": None, "sibsp": 0, "parch": 0, "fare": 7.75, "embarked": "Q"},
+    {"pclass": 1, "sex": "female", "age": 17, "sibsp": 1, "parch": 1,
+     "fare": 100.0, "embarked": "S"},
+    {"pclass": 3, "sex": "male", "age": 20, "sibsp": 0, "parch": 0,
+     "fare": 8.05, "embarked": "S"},
+    {"pclass": 2, "sex": "male", "age": 5, "sibsp": 1, "parch": 1,
+     "fare": 26.0, "embarked": "S"},
+    {"pclass": 3, "sex": "female", "age": None, "sibsp": 0, "parch": 0,
+     "fare": 7.75, "embarked": "Q"},
 ])
 display(new_passengers.assign(
     prediction=loaded.predict(new_passengers),
@@ -87,7 +91,7 @@ display(new_passengers.assign(
 2       2    male   5.0      1      1   26.00        S           0             0.46
 3       3  female   NaN      0      0    7.75        Q           1             0.76
 ```
-- **A list of dicts → `pd.DataFrame`**, one dict per passenger. This is exactly the shape of JSON that an API receives, so it's the bridge to Phase 4.
+- **A list of dicts → `pd.DataFrame`**, one dict per passenger. Each dict is split over 2 lines to stay under Ruff's 88-character limit; inside brackets Python ignores line breaks. This is exactly the shape of JSON that an API receives, so it's the bridge to Phase 4.
 - **The columns must have the same names as `X_train`.** The pipeline finds columns by name, not by position.
 - **`age: None` works:** pandas turns it into `NaN`, and the pipeline's imputer fills it with the learned 28.5. A 3rd-class woman from Queenstown gets **76%**.
 - **The 5-year-old boy gets only 46%.** The training set has just **8 second-class boys, all aged 3 or under** (and all 8 survived). The trees learned an age cut-off around 3.5 (Exercise 6), and he's past it, so for him the model leans on "male", and males mostly died. It has never seen a boy like him. **A model is only as good as its examples**: it can't know what it was never shown.
@@ -95,7 +99,8 @@ display(new_passengers.assign(
 ## Cell 4: A preview of the `/predict` endpoint
 
 ```python
-request = {"pclass": 2, "sex": "female", "age": 30, "sibsp": 0, "parch": 0, "fare": 13.0, "embarked": "X"}
+request = {"pclass": 2, "sex": "female", "age": 30, "sibsp": 0, "parch": 0,
+           "fare": 13.0, "embarked": "X"}
 chance = loaded.predict_proba(pd.DataFrame([request]))[0, 1]
 print(f"Survival chance: {chance:.0%}")
 ```
@@ -109,7 +114,7 @@ Survival chance: 84%
 
 ```markdown
 ## Exercise 8 answers
-- **Saved** the tuned pipeline (cleaning + random forest) to `models/titanic_model.joblib` (about 350 KB). It's git-ignored and rebuilt by running the notebook.
+- **Saved** the tuned pipeline (cleaning + random forest) to `models/titanic_model.joblib` (about 350 KB). Running the notebook rebuilds it.
 - **Loaded** it back: the same predictions on all 179 test passengers. Only load model files you trust, with the same scikit-learn version.
 - **New passengers:** 1st-class girl (17) **0.94**, 3rd-class man (20) **0.11**, 2nd-class boy (5) **0.46** (the training set's 8 second-class boys were all 3 or under, so the model never saw one like him), 3rd-class woman with no age **0.76** (the pipeline filled the age itself).
 - **API preview:** dict → `pd.DataFrame([request])` → `predict_proba` is exactly what the FastAPI `/predict` endpoint will do in Phase 4. An unknown port (`"X"`) doesn't crash the model, but the API should validate input first (Pydantic).
