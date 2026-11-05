@@ -11,8 +11,8 @@
 ├── TASK_5.md
 ├── titanic_model.ipynb    ← Exercises 1–8
 ├── notes/                 ← worked examples
-├── output/                ← charts (git-ignored)
-└── models/                ← the saved model (git-ignored, rebuilt by running the notebook)
+├── output/                ← charts, rebuilt by running the notebook
+└── models/                ← the saved model, rebuilt by running the notebook
 ```
 
 **Use these settings everywhere,** so your numbers match the expected answers:
