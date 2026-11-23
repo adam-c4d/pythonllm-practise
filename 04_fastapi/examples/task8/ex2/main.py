@@ -8,16 +8,11 @@ Clarity = Literal["I1", "SI2", "SI1", "VS2", "VS1", "VVS2", "VVS1", "IF"]
 
 # The shop's stock. `cost` is what the shop paid: customers must never see it.
 diamonds = {
-    1: {"id": 1, "carat": 0.23, "cut": "Ideal", "color": "E", "clarity": "SI2",
-        "price": 326, "cost": 200},
-    2: {"id": 2, "carat": 0.72, "cut": "Very Good", "color": "E", "clarity": "SI2",
-        "price": 2376, "cost": 1450},
-    3: {"id": 3, "carat": 0.91, "cut": "Good", "color": "D", "clarity": "SI1",
-        "price": 3357, "cost": 2050},
-    4: {"id": 4, "carat": 1.51, "cut": "Premium", "color": "E", "clarity": "SI1",
-        "price": 12530, "cost": 7600},
-    5: {"id": 5, "carat": 2.01, "cut": "Fair", "color": "G", "clarity": "I1",
-        "price": 6315, "cost": 3900},
+    1: {"id": 1, "carat": 0.23, "cut": "Ideal", "color": "E", "clarity": "SI2", "price": 326, "cost": 200},
+    2: {"id": 2, "carat": 0.72, "cut": "Very Good", "color": "E", "clarity": "SI2", "price": 2376, "cost": 1450},
+    3: {"id": 3, "carat": 0.91, "cut": "Good", "color": "D", "clarity": "SI1", "price": 3357, "cost": 2050},
+    4: {"id": 4, "carat": 1.51, "cut": "Premium", "color": "E", "clarity": "SI1", "price": 12530, "cost": 7600},
+    5: {"id": 5, "carat": 2.01, "cut": "Fair", "color": "G", "clarity": "I1", "price": 6315, "cost": 3900},
 }
 
 app = FastAPI(title="Diamond Shop")
