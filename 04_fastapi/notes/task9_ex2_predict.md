@@ -98,7 +98,7 @@ Content-Type: application/json
 - **`diamond.model_dump()`** turns the model into a plain dict: `{"carat": 0.5, "cut": "Ideal", ...}`.
 - **`pd.DataFrame([ ... ])`**: a **list** with one dict = a DataFrame with **one row**. The pipeline needs a DataFrame with named columns, because its `ColumnTransformer` picks columns by name (`carat`, `cut`, ...), just as in Task 6.
 - **`.predict(rows)`** always returns an array, one price per row. **`[0]`** takes the first (and only) one.
-- **`round(price)`** turns the NumPy float `1772.6...` into the Python `int` `1773`. Cents don't mean much for a guess that's 8.3% off on average (Task 6 Ex 8).
+- **`round(price)`** turns the NumPy float `1773.204...` into the Python `int` `1773`. Cents don't mean much for a guess that's 8.3% off on average (Task 6 Ex 8).
 - **`-> Prediction`**: the return type is also the response model. FastAPI checks the reply against it and documents it in `/docs`.
 - **No `cost`-style secrets here**, but the in/out split is the same habit as Task 8: one model for what comes in, one for what goes out.
 

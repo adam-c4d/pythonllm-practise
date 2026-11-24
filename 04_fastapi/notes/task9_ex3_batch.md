@@ -134,13 +134,13 @@ python time_batch.py
 Batch is 176x faster
 Same prices: True
 ```
-A second run gave `1.95 s`, `0.01 s` and `214x`. The batch time is so small that the "x faster" number jumps around, but it's always **100x or more**. The server terminal shows 500 `POST /predict` lines and 1 `POST /predict/batch` line.
+A second run gave `1.95 s`, `0.01 s` and `214x`. The batch time is so small that the "x faster" number jumps around, but it was well over **100x** in both runs. The server terminal shows 500 `POST /predict` lines and 1 `POST /predict/batch` line.
 
 ### Why each part works
 - **`df[FEATURES].head(500).to_dict("records")`**: the first 500 diamonds, as a list of dicts (one per row). That's the same JSON shape the API expects.
 - **`httpx.Client(base_url=URL)`** is a reusable HTTP client, Python's equivalent of Laravel's `Http::baseUrl(...)`. `client.post("/predict", json=d)` sends `d` as a JSON body. The `with` block reuses one connection and closes it at the end.
 - **`.json()["price"]`** reads the reply as a dict and takes the price.
-- **Why ~4 ms per single request?** Each one pays for the HTTP round trip, JSON parsing, validation, a new DataFrame and a `predict` call. The model's own maths is a tiny part. The batch pays those costs **once** for 500 rows.
+- **Why ~4 ms per single request?** Each one pays for the HTTP round trip, JSON parsing, validation, a new DataFrame and a `predict` call. The batch pays those costs **once** for 500 rows.
 - **`Same prices: True`**: the batch gives exactly the same answers. Batching changes the speed, not the result.
 
 **Where this matters later:** LLM and embedding APIs work the same way. In Phase 5 you'll send many texts to the embedding model in one call rather than one call per text.

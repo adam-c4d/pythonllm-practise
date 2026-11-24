@@ -156,7 +156,7 @@ INFO:     Waiting for application startup.
 WARNING: no model at missing.joblib. /predict will answer 503.
 INFO:     Application startup complete.
 ```
-The server **starts** this time.
+The server **starts** this time. (The `WARNING` line and the replies below are from running the app with `TestClient`; the `INFO` lines are the usual `fastapi dev` ones.)
 ```http
 GET http://127.0.0.1:8001/health
 ```

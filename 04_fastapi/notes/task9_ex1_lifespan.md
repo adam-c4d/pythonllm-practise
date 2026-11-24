@@ -61,7 +61,7 @@ INFO:     Waiting for application startup.
 Loaded diamond_price_model.joblib in 1.18 s
 INFO:     Application startup complete.
 ```
-Your process numbers and seconds will differ. **The very first start can take much longer** (17.32 s on my first run), because Windows Defender scans scikit-learn's files the first time they're loaded. It's 1–2 s after that.
+This log is put together from 2 runs: the `INFO` lines are from `fastapi dev`, and the `Loaded ...` line is from running the app with `TestClient` (Exercise 6). Where that line lands, your process numbers and the seconds will differ. **The very first start can take much longer** (17.32 s on my first run), because Windows Defender scans scikit-learn's files the first time they're loaded. It's 1–2 s after that.
 
 ```http
 GET http://127.0.0.1:8001/health
